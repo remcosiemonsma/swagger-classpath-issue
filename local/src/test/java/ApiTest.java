@@ -10,9 +10,19 @@ import java.util.List;
 class ApiTest {
 
     @Test
-    void testIfOpenApiFileIsParsable() {
+    void testWorking() {
         List<AuthorizationValue> authorizationValues = List.of();
         String url = "openapi-working.yaml";
+        SwaggerParseResult swaggerParseResult = new OpenAPIV3Parser().readLocation(url, authorizationValues, getParseOptions());
+
+        Assertions.assertThat(swaggerParseResult).isNotNull();
+        Assertions.assertThat(swaggerParseResult.getMessages()).isEmpty();
+    }
+
+    @Test
+    void testBroken() {
+        List<AuthorizationValue> authorizationValues = List.of();
+        String url = "openapi-broken.yaml";
         SwaggerParseResult swaggerParseResult = new OpenAPIV3Parser().readLocation(url, authorizationValues, getParseOptions());
 
         Assertions.assertThat(swaggerParseResult).isNotNull();

@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: SL CDS ContentService API
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080/v1'
+paths:
+  /documents:
+    get:
+      operationId: getDocuments
+      description: Returns all documents that match given criteria.
+      parameters:
+        - name: json
+          in: query
+          allowEmptyValue: true
+          description: Allowed values - encoded JSON as query parameter or none.
+          style: form
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/Documents-broken.yaml#/components/schemas/GetDocuments'
+      responses:
+        '200':
+          description: Returns zero or more documents that match the query parameter.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/Documents-broken.yaml#/components/schemas/GetDocuments'
