@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ecmversion": "3.1.6",
+  "type": "object",
+  "javaType": "java.lang.Object",
+  "description": "String key-value pairs indicating the parent containers.",
+  "additionalProperties": {
+    "type": "string"
+  }
+}

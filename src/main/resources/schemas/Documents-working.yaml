@@ -1,0 +1,37 @@
+components:
+  schemas:
+    GetDocuments:
+      type: object
+      properties:
+        document_ids:
+          type: array
+          items:
+            type: string
+        parents_collection:
+          type: array
+          items:
+            $ref: '../common_Parents.schema.json'
+        exact_parent_match:
+          type: boolean
+        document_types:
+          type: array
+          items:
+            enum:
+              - text
+              - interaction
+        metadata:
+          type: object
+        exact_metadata_match:
+          type: boolean
+        active:
+          type: boolean
+        version:
+          type: string
+        limit:
+          type: integer
+        skip:
+          type: integer
+        requested_fields:
+          type: object
+        order_items:
+          type: object
