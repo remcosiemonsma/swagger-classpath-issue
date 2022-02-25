@@ -10,7 +10,7 @@ components:
         parents_collection:
           type: array
           items:
-            $ref: '../common_Parents.schema.json'
+            $ref: '../local_Parents.schema.json'
         exact_parent_match:
           type: boolean
         document_types:
